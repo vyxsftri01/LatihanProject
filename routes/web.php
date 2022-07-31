@@ -34,7 +34,9 @@ Route::get('/crud', function () {
     return view('crud');
 });
 
-
+Route::get('/test-user', function () {
+    return view('layouts.user');
+});
 Route::get('/test-admin', function () {
     return view('layouts.admin');
 });
