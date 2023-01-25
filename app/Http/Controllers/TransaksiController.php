@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\pemesanan;
+use App\Models\villa;
 use App\Models\transaksi;
 use Illuminate\Http\Request;
 
@@ -17,11 +18,12 @@ class TransaksiController extends Controller
     {
         $this->middleware('auth');
     }
-    public function total()
-    {
-        $total = $harga * $jpesan * $lama;
-        $kembali = $bayar - $total;
-    }
+    // public function total2($a,$b)
+    // {
+    //     $hasil = $a * $b;
+         
+    //      return $hasil;
+    // }
     /**
      * Display a listing of the resource.
      *
@@ -43,7 +45,8 @@ class TransaksiController extends Controller
     {
         //
         $pemesanan = pemesanan::all();
-        return view('transaksi.create', compact('pemesanan'));
+        $villa = villa::all();
+        return view('transaksi.create', compact('pemesanan','villa'));
     }
 
     /**
@@ -57,30 +60,23 @@ class TransaksiController extends Controller
         //validasi
         $validated = $request->validate([
             'no' => 'required|unique:transaksis|max:255',
-            'id_pemesanans' => 'required',
-            'nama' => 'required',            
-            'nama_villa' => 'required',
-            'jenis_villa' => 'required',
-            'lama' => 'required',
-            'harga' => 'required',
-            'total' => 'required',
+            'id_villas' => 'required',
+            'id_pemesanans' => 'required',            
             'bayar' => 'required',
-            'sisa' => 'required',
+            
         ]);
 
         $transaksi = new transaksi();
         $transaksi->no = $request->no;
+        $transaksi->id_villas = $request->id_villas;
         $transaksi->id_pemesanans = $request->id_pemesanans;
-        $transaksi->nama = $request->nama;
-        $transaksi->nama_villa = $request->nama_villa;
-        $transaksi->jenis_villa = $request->jenis_villa;
-        $transaksi->lama = $request->lama;
-        $transaksi->harga = $request->harga;
-        $transaksi->total = $request->total;
         $transaksi->bayar = $request->bayar;
-        $transaksi->sisa = $request->sisa;
+        $transaksi->sisa = ($request->id_villas * $request->bayar);
+
+        // $transaksi->total = $this->total2($transaksi->lama, $transaksi->harga);
+        
         $transaksi->save();
-        return redirect()->route('transaksi.index')
+        return redirect()->route('transaksi.show')
             ->with('success', 'Data berhasil dibuat!');
     }
 
@@ -106,8 +102,9 @@ class TransaksiController extends Controller
     {
         $transaksi = transaksi::findOrFail($id);
         $pemesanan = pemesanan::all();
+        $villa = villa::all();
 
-        return view('transaksi.edit', compact('transaksi', 'pemesanan'));
+        return view('transaksi.edit', compact('transaksi', 'pemesanan', 'villa'));
 
     }
 
@@ -122,27 +119,18 @@ class TransaksiController extends Controller
     {
         // Validasi
         $validated = $request->validate([
-            'no' => 'required|max:255',
+            'no' => 'required',
+            'id_villas' => 'required',
             'id_pemesanans' => 'required',
-            'nama' => 'required',
-            'nama_villa' => 'required',
-            'jenis_villa' => 'required',
-            'lama' => 'required',
-            'harga' => 'required',
-            'total' => 'required',
             'bayar' => 'required',
             'sisa' => 'required',
+            
         ]);
 
         $transaksi = transaksi::findOrFail($id);
         $transaksi->no = $request->no;
+        $transaksi->id_villas = $request->id_villas;
         $transaksi->id_pemesanans = $request->id_pemesanans;
-        $transaksi->nama = $request->nama;
-        $transaksi->nama_villa = $request->nama_villa;
-        $transaksi->jenis_villa = $request->jenis_villa;
-        $transaksi->lama = $request->lama;
-        $transaksi->harga = $request->harga;
-        $transaksi->total = $request->total;
         $transaksi->bayar = $request->bayar;
         $transaksi->sisa = $request->sisa;
         $transaksi->save();

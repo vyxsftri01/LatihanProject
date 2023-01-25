@@ -17,12 +17,12 @@ class CreatePemesanansTable extends Migration
             $table->id();
             $table->string('no')->unique();
             $table->unsignedBigInteger('id_identitas');
-            $table->string('nama_villa');
-            $table->integer('jpesan');
+            $table->unsignedBigInteger('id_villas');
             $table->integer('lama');
             $table->date('tgl_masuk');
             $table->date('tgl_keluar');
-            $table->unsignedBigInteger('id_villas');
+            $table->string('nama_villa');
+            $table->integer('total');
 
             $table->foreign('id_identitas')->references('id')->on('identitas')
                 ->onDelete('cascade');

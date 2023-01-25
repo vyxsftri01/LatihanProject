@@ -18,6 +18,8 @@ class PemesananController extends Controller
     {
         $this->middleware('auth');
     }
+
+    
     /**
      * Display a listing of the resource.
      *
@@ -42,7 +44,6 @@ class PemesananController extends Controller
         $villa = villa::all();
         return view('pemesanan.create', compact('identitas','villa'));
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -55,8 +56,7 @@ class PemesananController extends Controller
         $validated = $request->validate([
             'no' => 'required|unique:pemesanans|max:255',
             'id_identitas' => 'required',
-            'jenis_villa' => 'required',            
-            'jpesan' => 'required',
+            'nama_villa' => 'required',            
             'lama' => 'required',
             'tgl_masuk' => 'required',
             'tgl_keluar' => 'required',
@@ -66,15 +66,15 @@ class PemesananController extends Controller
         $pemesanan = new pemesanan();
         $pemesanan->no = $request->no;
         $pemesanan->id_identitas = $request->id_identitas;
-        $pemesanan->jenis_villa = $request->jenis_villa;
-        $pemesanan->jpesan = $request->jpesan;
+        $pemesanan->nama_villa = $request->nama_villa;
         $pemesanan->lama = $request->lama;
         $pemesanan->tgl_masuk = $request->tgl_masuk;
         $pemesanan->tgl_keluar = $request->tgl_keluar;
-        $pemesanan->id_villa = $request->id_villa;
+        $pemesanan->id_villas = $request->id_villas;
+        $pemesanan->total = ($request->id_villas * $request->lama);
         $pemesanan->save();
-        return redirect()->route('pemesanan.index')
-            ->with('success', 'Data berhasil dibuat!');
+        return redirect('/form2')->with('succes',
+            'Data berhasil dimuat!');
     }
 
     /**
@@ -118,23 +118,23 @@ class PemesananController extends Controller
         $validated = $request->validate([
             'no' => 'required|max:255',
             'id_identitas' => 'required',
-            'jenis_villa' => 'required',
-            'jpesan' => 'required',
+            'nama_villa' => 'required',
             'lama' => 'required',
             'tgl_masuk' => 'required',
             'tgl_keluar' => 'required',
             'id_villas' => 'required',
+            'total' => 'required',
         ]);
 
         $pemesanan = pemesanan::findOrFail($id);
         $pemesanan->no = $request->no;
         $pemesanan->id_identitas = $request->id_identitas;
-        $pemesanan->jenis_villa = $request->jenis_villa;
-        $pemesanan->jpesan = $request->jpesan;
+        $pemesanan->nama_villa = $request->nama_villa;
         $pemesanan->lama = $request->lama;
         $pemesanan->tgl_masuk = $request->tgl_masuk;
         $pemesanan->tgl_keluar = $request->tgl_keluar;
         $pemesanan->id_villas = $request->id_villas;
+        $pemesanan->total = $request->total;
         $pemesanan->save();
         return redirect()->route('pemesanan.index')
             ->with('success', 'Data berhasil diedit!');

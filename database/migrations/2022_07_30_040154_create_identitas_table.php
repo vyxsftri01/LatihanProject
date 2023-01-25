@@ -20,8 +20,8 @@ class CreateIdentitasTable extends Migration
             $table->string('alamat');
             $table->date('tgl_lahir');
             $table->enum('jk', ['Laki-laki', 'Perempuan']);
-            $table->integer('no_tlp');
-            $table->integer('no_ktp');
+            $table->string('no_tlp');
+            $table->string('no_ktp');
             $table->timestamps();
         });
     }

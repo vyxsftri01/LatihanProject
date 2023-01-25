@@ -8,17 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class transaksi extends Model
 {
     use HasFactory;
-    public $fillable = ['id_pemesanans', 'nama', 'nama_villa', 'jenis_villa', 'lama', 'harga', 'total','bayar','sisa'];
+    public $fillable = ['no','id_villas', 'id_pemesanans', 'bayar', 'sisa'];
     // membuat fitur created_at(kapan data dibuat) & updated_at (kapan data diedit)
     // aktif
     public $timestamps = true;
 
     // membuat relasi one to one
-    public function riwayats()
+    
+    public function villas()
     {
         // data dari model 'Siswa' bisa memiliki 1 data
-        // dari model 'pemesanan' melalui id_siswa
-        return $this->hasOne(Riwayat::class, 'id_transaksis');
+        // dari model 'Wali' melalui id_siswa
+        return $this->belongsTo(villa::class, 'id_villas');
     }
     public function pemesanans()
     {

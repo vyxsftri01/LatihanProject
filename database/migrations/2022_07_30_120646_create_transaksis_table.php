@@ -16,17 +16,14 @@ class CreateTransaksisTable extends Migration
         Schema::create('transaksis', function (Blueprint $table) {
             $table->id();
             $table->string('no')->unique();
+            $table->unsignedBigInteger('id_villas');
             $table->unsignedBigInteger('id_pemesanans');
-            $table->string('nama');
-            $table->string('nama_villa');
-            $table->string('jenis_villa');
-            $table->string('lama');
-            $table->integer('harga');
-            $table->integer('total');
             $table->integer('bayar');
             $table->integer('sisa');
 
-
+            
+            $table->foreign('id_villas')->references('id')->on('villas')
+                ->onDelete('cascade');
             $table->foreign('id_pemesanans')->references('id')->on('pemesanans')
                 ->onDelete('cascade');
 

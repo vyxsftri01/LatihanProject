@@ -16,10 +16,11 @@ class identitasController extends Controller
     {
         $this->middleware('auth');
     }
+    
     public function index()
     {
-        $a = identitas::all();
-        return view('identitas.index', ['identitas' => $a]);
+        $identitas = identitas::all();
+        return view('identitas.index', compact('identitas'));
     }
 
     /**
@@ -48,6 +49,7 @@ class identitasController extends Controller
             'jk' => 'required',
             'no_tlp' => 'required',
             'no_ktp' => 'required',
+        
         ]);
 
         $identitas = new identitas();
@@ -59,7 +61,7 @@ class identitasController extends Controller
         $identitas->no_tlp = $request->no_tlp;
         $identitas->no_ktp = $request->no_ktp;
         $identitas->save();
-        return redirect()->route('identitas.index')->with('succes',
+        return redirect('/hireath')->with('succes',
             'Data berhasil dimuat!');
     }
 

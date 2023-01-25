@@ -9,7 +9,7 @@ class pemesanan extends Model
 {
     use HasFactory;
     // field apa saja yang bisa di isi
-    public $fillable = ['no','id_identitas', 'nama_villa', 'jpesan', 'lama', 'tgl_masuk', 'tgl_keluar', 'id_villas'];
+    public $fillable = ['no','id_identitas', 'id_villas', 'lama', 'tgl_masuk', 'tgl_keluar', 'nama_villa' , 'total'];
     // membuat fitur created_at(kapan data dibuat) & updated_at (kapan data diedit)
     // aktif
     public $timestamps = true;
@@ -21,12 +21,7 @@ class pemesanan extends Model
         // dari model 'transaksi' melalui id_siswa
         return $this->hasOne(Transaksi::class, 'id_pemesanans');
     }
-    public function riwayats()
-    {
-        // data dari model 'Siswa' bisa memiliki 1 data
-        // dari model 'pemesanan' melalui id_siswa
-        return $this->hasOne(Riwayat::class, 'id_pemesanans');
-    }
+    
     public function identitas()
     {
         // data dari model 'Siswa' bisa memiliki 1 data

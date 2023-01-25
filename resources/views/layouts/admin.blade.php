@@ -10,13 +10,20 @@ Dribbble: www.dribbble.com/keenthemes
 Like: www.facebook.com/keenthemes
 License: For each use you must have a valid license purchased only from above link in order to legally use the theme for your project.
 -->
-<html lang="en">
+<html lang="en"
+class="light-style layout-menu-fixed"
+  dir="ltr"
+  data-theme="theme-default"
+  data-assets-path="{{asset('assetb/')}}"
+  data-template="vertical-menu-template-free"
+
+>
 	<!--begin::Head-->
 	
 <!-- Mirrored from preview.keenthemes.com/metronic8/demo1/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 21 Jul 2022 03:02:09 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
-		<title>Metronic - the world's #1 selling Bootstrap Admin Theme Ecosystem for HTML, Vue, React, Angular &amp; Laravel by Keenthemes</title>
+		<title>HireathVilla-Admin</title>
 		<meta charset="utf-8" />
 		<meta name="description" content="The most advanced Bootstrap Admin Theme on Themeforest trusted by 100,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue, Asp.Net Core, Blazor, Django, Flask &amp; Laravel versions. Grab your copy now and get life-time updates for free." />
 		<meta name="keywords" content="Metronic, Bootstrap, Bootstrap 5, Angular, VueJs, React, Asp.Net Core, Blazor, Django, Flask &amp; Laravel, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
@@ -42,6 +49,38 @@ License: For each use you must have a valid license purchased only from above li
 		<!--Begin::Google Tag Manager -->
 		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-5FS8GGP');</script>
 		<!--End::Google Tag Manager -->
+
+		<link rel="icon" type="image/x-icon" href="{{asset('assetb/img/favicon/favicon.ico')}}" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com')}}" />
+    <link rel="preconnect" href="https://fonts.gstatic.com')}}" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons. Uncomment required icon fonts -->
+    <link rel="stylesheet" href="{{asset('assetb/vendor/fonts/boxicons.css')}}" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="{{asset('assetb/vendor/css/core.css')}}" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="{{asset('assetb/vendor/css/theme-default.css')}}" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="{{asset('assetb/css/demo.css')}}" />
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="{{asset('assetb/vendor/libs/perfect-scrollbar/perfect-scrollbar.css')}}" />
+
+    <link rel="stylesheet" href="{{asset('assetb/vendor/libs/apex-charts/apex-charts.css')}}" />
+
+    <!-- Page CSS -->
+
+    <!-- Helpers -->
+    <script src="{{asset('assetb/vendor/js/helpers.js')}}"></script>
+
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="{{asset('assetb/js/config.js')}}"></script>
 	</head>
 	<!--end::Head-->
 	<!--begin::Body-->
@@ -58,6 +97,8 @@ License: For each use you must have a valid license purchased only from above li
 		<div class="d-flex flex-column flex-root app-root" id="kt_app_root">
 			<!--begin::Page-->
 			<div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+
+			
 				<!--begin::Header-->
 				@include('layouts.components.navbar')
 				<!--end::Header-->
@@ -85,7 +126,10 @@ License: For each use you must have a valid license purchased only from above li
 							</div>
 							<!--end::Toolbar-->
 							<!--begin::Content-->
-							@yield('content')
+							<!-- @yield('content') -->
+
+
+							<div></div>
 							<!--end::Content-->
 						</div>
 						<!--end::Content wrapper-->
@@ -125,333 +169,7 @@ License: For each use you must have a valid license purchased only from above li
 		</div>
 		<!--end::App-->
 		<!--begin::App layout builder-->
-		<div id="kt_app_layout_builder" class="bg-body" data-kt-drawer="true" data-kt-drawer-name="app-settings" data-kt-drawer-activate="true" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'300px', 'lg': '380px'}" data-kt-drawer-direction="end" data-kt-drawer-toggle="#kt_app_layout_builder_toggle" data-kt-drawer-close="#kt_app_layout_builder_close">
-			<!--begin::Card-->
-			<div class="card border-0 shadow-none rounded-0 w-100">
-				<!--begin::Card header-->
-				<div class="card-header bgi-position-y-bottom bgi-position-x-end bgi-size-cover bgi-no-repeat rounded-0 border-0 py-4" id="kt_app_layout_builder_header" style="background-image:url('{{asset('assetz/media/misc/layout/header-bg.jpg')}}')">
-					<!--begin::Card title-->
-					<h3 class="card-title fs-3 fw-bold text-white flex-column m-0">Metronic Builder 
-					<small class="text-white opacity-50 fs-7 fw-semibold pt-1">Get your product deeply customized</small></h3>
-					<!--end::Card title-->
-					<!--begin::Card toolbar-->
-					<div class="card-toolbar">
-						<button type="button" class="btn btn-sm btn-icon bg-white bg-opacity-25 btn-color-white p-0 w-20px h-20px rounded-1" id="kt_app_layout_builder_close">
-							<!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
-							<span class="svg-icon svg-icon-3">
-								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
-									<rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor" />
-								</svg>
-							</span>
-							<!--end::Svg Icon-->
-						</button>
-					</div>
-					<!--end::Card toolbar-->
-				</div>
-				<!--end::Card header-->
-				<!--begin::Card body-->
-				<div class="card-body position-relative" id="kt_app_layout_builder_body">
-					<!--begin::Content-->
-					<div id="kt_app_settings_content" class="position-relative scroll-y me-n5 pe-5" data-kt-scroll="true" data-kt-scroll-height="auto" data-kt-scroll-wrappers="#kt_app_layout_builder_body" data-kt-scroll-dependencies="#kt_app_layout_builder_header, #kt_app_layout_builder_footer" data-kt-scroll-offset="5px">
-						<!--begin::Form-->
-						<form class="form" method="POST" id="kt_app_layout_builder_form" action="https://preview.keenthemes.com/metronic8/demo1/index.php">
-							<input type="hidden" id="kt_app_layout_builder_action" name="layout-builder[action]" />
-							<!--begin::Card body-->
-							<div class="card-body p-0">
-								<!--begin::Form group-->
-								<div class="form-group">
-									<!--begin::Heading-->
-									<div class="mb-6">
-										<h4 class="fw-bold text-dark">Theme Mode</h4>
-										<div class="fw-semibold text-muted fs-7 d-block lh-1">Enjoy Dark &amp; Light modes. 
-										<a class="" href="documentation/getting-started/dark-mode.html" target="_blank">See docs</a></div>
-									</div>
-									<!--end::Heading-->
-									<!--begin::Options-->
-									<div class="row" data-kt-buttons="true" data-kt-buttons-target=".form-check-image,.form-check-input">
-										<!--begin::Col-->
-										<div class="col-6">
-											<!--begin::Option-->
-											<label class="form-check-image form-check-success">
-												<!--begin::Image-->
-												<div class="form-check-wrapper">
-													<img src="{{asset('assetz/media/misc/layout/light.png')}}" class="mw-100" alt="" />
-												</div>
-												<!--end::Image-->
-												<!--begin::Check-->
-												<div class="form-check form-check-custom form-check-solid form-check-sm form-check-success">
-													<input class="form-check-input" type="radio" value="light" name="theme_mode" id="kt_layout_builder_theme_mode_light" />
-													<!--begin::Label-->
-													<div class="form-check-label text-gray-700">Terang</div>
-													<!--end::Label-->
-												</div>
-												<!--end::Check-->
-											</label>
-											<!--end::Option-->
-										</div>
-										<!--end::Col-->
-										<!--begin::Col-->
-										<div class="col-6">
-											<!--begin::Option-->
-											<label class="form-check-image form-check-success">
-												<!--begin::Image-->
-												<div class="form-check-wrapper">
-													<img src="{{asset('assetz/media/misc/layout/dark.png')}}" class="mw-100" alt="" />
-												</div>
-												<!--end::Image-->
-												<!--begin::Check-->
-												<div class="form-check form-check-custom form-check-solid form-check-sm form-check-success">
-													<input class="form-check-input" type="radio" value="dark" name="theme_mode" id="kt_layout_builder_theme_mode_dark" />
-													<!--begin::Label-->
-													<div class="form-check-label text-gray-700">Gelap</div>
-													<!--end::Label-->
-												</div>
-												<!--end::Check-->
-											</label>
-											<!--end::Option-->
-										</div>
-										<!--end::Col-->
-									</div>
-									<!--end::Options-->
-								</div>
-								<!--end::Form group-->
-								<!--begin::Separator-->
-								<div class="separator separator-dashed my-5"></div>
-								<!--end::Separator-->
-								<!--begin::Form group-->
-								<div class="form-group d-flex flex-stack">
-									<!--begin::Heading-->
-									<div class="d-flex flex-column">
-										<h4 class="fw-bold text-dark">RTL Mode</h4>
-										<div class="fs-7 fw-semibold text-muted">Change Language Direction. 
-										<a class="" href="documentation/getting-started/rtl.html" target="_blank">See docs</a></div>
-									</div>
-									<!--end::Heading-->
-									<!--begin::Option-->
-									<div class="d-flex justify-content-end">
-										<!--begin::Check-->
-										<div class="form-check form-check-custom form-check-solid form-check-success form-switch">
-											<input type="hidden" value="false" name="layout-builder[layout][app][general][rtl]" />
-											<input class="form-check-input w-45px h-30px" type="checkbox" value="true" name="layout-builder[layout][app][general][rtl]" id="kt_builder_rtl" />
-											<!--begin::Label-->
-											<label class="form-check-label" for="kt_builder_rtl"></label>
-											<!--end::Label-->
-										</div>
-										<!--end::Check-->
-									</div>
-									<!--end::Option-->
-								</div>
-								<!--end::Form group-->
-								<!--begin::Separator-->
-								<div class="separator separator-dashed my-5"></div>
-								<!--end::Separator-->
-								<!--begin::Form group-->
-								<div class="form-group">
-									<!--begin::Heading-->
-									<div class="d-flex flex-column mb-4">
-										<h4 class="fw-bold text-dark">Width Mode</h4>
-										<div class="fs-7 fw-semibold text-muted">Page width options</div>
-									</div>
-									<!--end::Heading-->
-									<!--begin::Options-->
-									<div class="d-flex">
-										<!--begin::Check-->
-										<div class="form-check form-check-custom form-check-success form-check-solid form-check-sm me-5">
-											<input class="form-check-input" type="radio" checked="checked" value="default" id="kt_builder_page_width_default" name="layout-builder[layout][app][general][page-width]" />
-											<!--begin::Label-->
-											<label class="form-check-label text-gray-700 fw-bold text-nowrap" for="kt_builder_page_width_default">Default</label>
-											<!--end::Label-->
-										</div>
-										<!--end::Check-->
-										<!--begin::Check-->
-										<div class="form-check form-check-custom form-check-success form-check-solid form-check-sm me-5">
-											<input class="form-check-input" type="radio" value="fluid" id="kt_builder_page_width_fluid" name="layout-builder[layout][app][general][page-width]" />
-											<!--begin::Label-->
-											<label class="form-check-label text-gray-700 fw-bold text-nowrap" for="kt_builder_page_width_fluid">Fluid</label>
-											<!--end::Label-->
-										</div>
-										<!--end::Check-->
-										<!--begin::Check-->
-										<div class="form-check form-check-custom form-check-success form-check-solid form-check-sm me-5">
-											<input class="form-check-input" type="radio" value="fixed" id="kt_builder_page_width_fixed" name="layout-builder[layout][app][general][page-width]" />
-											<!--begin::Label-->
-											<label class="form-check-label text-gray-700 fw-bold text-nowrap" for="kt_builder_page_width_fixed">Fixed</label>
-											<!--end::Label-->
-										</div>
-										<!--end::Check-->
-									</div>
-									<!--end::Options-->
-								</div>
-								<!--end::Form group-->
-								<!--begin::Separator-->
-								<div class="separator separator-dashed my-5"></div>
-								<!--end::Separator-->
-								<!--begin::Form group-->
-								<div class="form-group">
-									<!--begin::Heading-->
-									<div class="d-flex flex-column mb-4">
-										<h4 class="fw-bold text-dark">Menu Icon</h4>
-										<div class="fs-7 fw-semibold text-muted">Sidebar menu icon options</div>
-									</div>
-									<!--end::Heading-->
-									<!--begin::Options-->
-									<div class="d-flex">
-										<!--begin::Check-->
-										<div class="form-check form-check-custom form-check-success form-check-solid form-check-sm me-5">
-											<input class="form-check-input" type="radio" checked="checked" value="svg" id="kt_builder_icon_svg" name="layout-builder[layout][app][sidebar][default][menu][icon-type]" />
-											<!--begin::Label-->
-											<label class="form-check-label text-gray-700 fw-bold text-nowrap" for="kt_builder_icon_svg">SVG Duotone</label>
-											<!--end::Label-->
-										</div>
-										<!--end::Check-->
-										<!--begin::Check-->
-										<div class="form-check form-check-custom form-check-success form-check-solid form-check-sm me-5">
-											<input class="form-check-input" type="radio" value="font" id="kt_builder_icon_font" name="layout-builder[layout][app][sidebar][default][menu][icon-type]" />
-											<!--begin::Label-->
-											<label class="form-check-label text-gray-700 fw-bold text-nowrap" for="kt_builder_icon_font">Font Icons</label>
-											<!--end::Label-->
-										</div>
-										<!--end::Check-->
-									</div>
-									<!--end::Options-->
-								</div>
-								<!--end::Form group-->
-								<!--begin::Separator-->
-								<div class="separator separator-dashed my-5"></div>
-								<!--end::Separator-->
-								<!--begin::Form group-->
-								<div class="form-group">
-									<!--begin::Heading-->
-									<div class="mb-6">
-										<h4 class="fw-bold text-dark">Layouts</h4>
-										<span class="fw-semibold text-muted fs-7 lh-1">4 main layouts.</span>
-										<a href="layout-builder.html" class="text-primary">More layout options</a>
-									</div>
-									<!--end::Heading-->
-									<!--begin::Options-->
-									<div class="row gy-3" data-kt-buttons="true" data-kt-buttons-target=".form-check-image:not(.disabled),.form-check-input:not([disabled])">
-										<!--begin::Col-->
-										<div class="col-6">
-											<!--begin::Option-->
-											<label class="form-check-image form-check-success active active">
-												<!--begin::Image-->
-												<div class="form-check-wrapper">
-													<img src="{{asset('assetz/media/misc/layout/dark-sidebar.png')}}" class="mw-100" alt="" />
-												</div>
-												<!--end::Image-->
-												<!--begin::Check-->
-												<div class="form-check form-check-custom form-check-success form-check-sm form-check-solid">
-													<input class="form-check-input" type="radio" checked="checked" value="dark-sidebar" name="layout-builder[layout][app][general][layout]" />
-													<!--begin::Label-->
-													<div class="form-check-label text-gray-700">Dark Sidebar</div>
-													<!--end::Label-->
-												</div>
-												<!--end::Check-->
-											</label>
-											<!--end::Option-->
-										</div>
-										<!--end::Col-->
-										<!--begin::Col-->
-										<div class="col-6">
-											<!--begin::Option-->
-											<label class="form-check-image form-check-success">
-												<!--begin::Image-->
-												<div class="form-check-wrapper">
-													<img src="{{asset('assetz/media/misc/layout/light-sidebar.png')}}" class="mw-100" alt="" />
-												</div>
-												<!--end::Image-->
-												<!--begin::Check-->
-												<div class="form-check form-check-custom form-check-success form-check-sm form-check-solid">
-													<input class="form-check-input" type="radio" value="light-sidebar" name="layout-builder[layout][app][general][layout]" />
-													<!--begin::Label-->
-													<div class="form-check-label text-gray-700">Light Sidebar</div>
-													<!--end::Label-->
-												</div>
-												<!--end::Check-->
-											</label>
-											<!--end::Option-->
-										</div>
-										<!--end::Col-->
-										<!--begin::Col-->
-										<div class="col-6">
-											<!--begin::Option-->
-											<label class="form-check-image form-check-success">
-												<!--begin::Image-->
-												<div class="form-check-wrapper">
-													<img src="{{asset('assetz/media/misc/layout/dark-header.png')}}" class="mw-100" alt="" />
-												</div>
-												<!--end::Image-->
-												<!--begin::Check-->
-												<div class="form-check form-check-custom form-check-success form-check-sm form-check-solid">
-													<input class="form-check-input" type="radio" value="dark-header" name="layout-builder[layout][app][general][layout]" />
-													<!--begin::Label-->
-													<div class="form-check-label text-gray-700">Dark Header</div>
-													<!--end::Label-->
-												</div>
-												<!--end::Check-->
-											</label>
-											<!--end::Option-->
-										</div>
-										<!--end::Col-->
-										<!--begin::Col-->
-										<div class="col-6">
-											<!--begin::Option-->
-											<label class="form-check-image form-check-success">
-												<!--begin::Image-->
-												<div class="form-check-wrapper">
-													<img src="{{asset('assetz/media/misc/layout/light-header.png')}}" class="mw-100" alt="" />
-												</div>
-												<!--end::Image-->
-												<!--begin::Check-->
-												<div class="form-check form-check-custom form-check-success form-check-sm form-check-solid">
-													<input class="form-check-input" type="radio" value="light-header" name="layout-builder[layout][app][general][layout]" />
-													<!--begin::Label-->
-													<div class="form-check-label text-gray-700">Light Header</div>
-													<!--end::Label-->
-												</div>
-												<!--end::Check-->
-											</label>
-											<!--end::Option-->
-										</div>
-										<!--end::Col-->
-									</div>
-									<!--end::Options-->
-								</div>
-								<!--end::Form group-->
-							</div>
-							<!--end::Card body-->
-						</form>
-						<!--end::Form-->
-					</div>
-					<!--end::Content-->
-				</div>
-				<!--end::Card body-->
-				<!--begin::Card footer-->
-				<div class="card-footer border-0 d-flex gap-3 pb-9 pt-0" id="kt_app_layout_builder_footer">
-					<button type="button" id="kt_app_layout_builder_preview" class="btn btn-primary flex-grow-1 fw-semibold">
-						<!--begin::Indicator label-->
-						<span class="indicator-label">Preview</span>
-						<!--end::Indicator label-->
-						<!--begin::Indicator progress-->
-						<span class="indicator-progress">Please wait... 
-						<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-						<!--end::Indicator progress-->
-					</button>
-					<button type="button" id="kt_app_layout_builder_reset" class="btn btn-light flex-grow-1 fw-semibold">
-						<!--begin::Indicator label-->
-						<span class="indicator-label">Reset</span>
-						<!--end::Indicator label-->
-						<!--begin::Indicator progress-->
-						<span class="indicator-progress">Please wait... 
-						<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-						<!--end::Indicator progress-->
-					</button>
-				</div>
-				<!--end::Card footer-->
-			</div>
-			<!--end::Card-->
-		</div>
+		
 		<!--end::App layout builder-->
 		<!--begin::App settings toggle-->
 		
@@ -461,352 +179,7 @@ License: For each use you must have a valid license purchased only from above li
 		
 		<!--end::Activities drawer-->
 		<!--begin::Chat drawer-->
-		<div id="kt_drawer_chat" class="bg-body" data-kt-drawer="true" data-kt-drawer-name="chat" data-kt-drawer-activate="true" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'300px', 'md': '500px'}" data-kt-drawer-direction="end" data-kt-drawer-toggle="#kt_drawer_chat_toggle" data-kt-drawer-close="#kt_drawer_chat_close">
-			<!--begin::Messenger-->
-			<div class="card w-100 rounded-0 border-0" id="kt_drawer_chat_messenger">
-				<!--begin::Card header-->
-				<div class="card-header pe-5" id="kt_drawer_chat_messenger_header">
-					<!--begin::Title-->
-					<div class="card-title">
-						<!--begin::User-->
-						<div class="d-flex justify-content-center flex-column me-3">
-							<a href="#" class="fs-4 fw-bold text-gray-900 text-hover-primary me-1 mb-2 lh-1">Brian Cox</a>
-							<!--begin::Info-->
-							<div class="mb-0 lh-1">
-								<span class="badge badge-success badge-circle w-10px h-10px me-1"></span>
-								<span class="fs-7 fw-semibold text-muted">Active</span>
-							</div>
-							<!--end::Info-->
-						</div>
-						<!--end::User-->
-					</div>
-					<!--end::Title-->
-					<!--begin::Card toolbar-->
-					<div class="card-toolbar">
-						<!--begin::Menu-->
-						<div class="me-2">
-							<button class="btn btn-sm btn-icon btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-								<i class="bi bi-three-dots fs-3"></i>
-							</button>
-							<!--begin::Menu 3-->
-							<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px py-3" data-kt-menu="true">
-								<!--begin::Heading-->
-								<div class="menu-item px-3">
-									<div class="menu-content text-muted pb-2 px-3 fs-7 text-uppercase">Contacts</div>
-								</div>
-								<!--end::Heading-->
-								<!--begin::Menu item-->
-								<div class="menu-item px-3">
-									<a href="#" class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_users_search">Add Contact</a>
-								</div>
-								<!--end::Menu item-->
-								<!--begin::Menu item-->
-								<div class="menu-item px-3">
-									<a href="#" class="menu-link flex-stack px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_invite_friends">Invite Contacts 
-									<i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Specify a contact email to send an invitation"></i></a>
-								</div>
-								<!--end::Menu item-->
-								<!--begin::Menu item-->
-								<div class="menu-item px-3" data-kt-menu-trigger="hover" data-kt-menu-placement="right-start">
-									<a href="#" class="menu-link px-3">
-										<span class="menu-title">Groups</span>
-										<span class="menu-arrow"></span>
-									</a>
-									<!--begin::Menu sub-->
-									<div class="menu-sub menu-sub-dropdown w-175px py-4">
-										<!--begin::Menu item-->
-										<div class="menu-item px-3">
-											<a href="#" class="menu-link px-3" data-bs-toggle="tooltip" title="Coming soon">Create Group</a>
-										</div>
-										<!--end::Menu item-->
-										<!--begin::Menu item-->
-										<div class="menu-item px-3">
-											<a href="#" class="menu-link px-3" data-bs-toggle="tooltip" title="Coming soon">Invite Members</a>
-										</div>
-										<!--end::Menu item-->
-										<!--begin::Menu item-->
-										<div class="menu-item px-3">
-											<a href="#" class="menu-link px-3" data-bs-toggle="tooltip" title="Coming soon">Settings</a>
-										</div>
-										<!--end::Menu item-->
-									</div>
-									<!--end::Menu sub-->
-								</div>
-								<!--end::Menu item-->
-								<!--begin::Menu item-->
-								<div class="menu-item px-3 my-1">
-									<a href="#" class="menu-link px-3" data-bs-toggle="tooltip" title="Coming soon">Settings</a>
-								</div>
-								<!--end::Menu item-->
-							</div>
-							<!--end::Menu 3-->
-						</div>
-						<!--end::Menu-->
-						<!--begin::Close-->
-						<div class="btn btn-sm btn-icon btn-active-light-primary" id="kt_drawer_chat_close">
-							<!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
-							<span class="svg-icon svg-icon-2">
-								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
-									<rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor" />
-								</svg>
-							</span>
-							<!--end::Svg Icon-->
-						</div>
-						<!--end::Close-->
-					</div>
-					<!--end::Card toolbar-->
-				</div>
-				<!--end::Card header-->
-				<!--begin::Card body-->
-				<div class="card-body" id="kt_drawer_chat_messenger_body">
-					<!--begin::Messages-->
-					<div class="scroll-y me-n5 pe-5" data-kt-element="messages" data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_drawer_chat_messenger_header, #kt_drawer_chat_messenger_footer" data-kt-scroll-wrappers="#kt_drawer_chat_messenger_body" data-kt-scroll-offset="0px">
-						<!--begin::Message(in)-->
-						<div class="d-flex justify-content-start mb-10">
-							<!--begin::Wrapper-->
-							<div class="d-flex flex-column align-items-start">
-								<!--begin::User-->
-								<div class="d-flex align-items-center mb-2">
-									<!--begin::Avatar-->
-									<div class="symbol symbol-35px symbol-circle">
-										<img alt="Pic" src="{{asset('assetz/media/avatars/300-25.jpg')}}" />
-									</div>
-									<!--end::Avatar-->
-									<!--begin::Details-->
-									<div class="ms-3">
-										<a href="#" class="fs-5 fw-bold text-gray-900 text-hover-primary me-1">Brian Cox</a>
-										<span class="text-muted fs-7 mb-1">2 mins</span>
-									</div>
-									<!--end::Details-->
-								</div>
-								<!--end::User-->
-								<!--begin::Text-->
-								<div class="p-5 rounded bg-light-info text-dark fw-semibold mw-lg-400px text-start" data-kt-element="message-text">How likely are you to recommend our company to your friends and family ?</div>
-								<!--end::Text-->
-							</div>
-							<!--end::Wrapper-->
-						</div>
-						<!--end::Message(in)-->
-						<!--begin::Message(out)-->
-						<div class="d-flex justify-content-end mb-10">
-							<!--begin::Wrapper-->
-							<div class="d-flex flex-column align-items-end">
-								<!--begin::User-->
-								<div class="d-flex align-items-center mb-2">
-									<!--begin::Details-->
-									<div class="me-3">
-										<span class="text-muted fs-7 mb-1">5 mins</span>
-										<a href="#" class="fs-5 fw-bold text-gray-900 text-hover-primary ms-1">You</a>
-									</div>
-									<!--end::Details-->
-									<!--begin::Avatar-->
-									<div class="symbol symbol-35px symbol-circle">
-										<img alt="Pic" src="{{asset('assetz/media/avatars/300-1.jpg')}}" />
-									</div>
-									<!--end::Avatar-->
-								</div>
-								<!--end::User-->
-								<!--begin::Text-->
-								<div class="p-5 rounded bg-light-primary text-dark fw-semibold mw-lg-400px text-end" data-kt-element="message-text">Hey there, we’re just writing to let you know that you’ve been subscribed to a repository on GitHub.</div>
-								<!--end::Text-->
-							</div>
-							<!--end::Wrapper-->
-						</div>
-						<!--end::Message(out)-->
-						<!--begin::Message(in)-->
-						<div class="d-flex justify-content-start mb-10">
-							<!--begin::Wrapper-->
-							<div class="d-flex flex-column align-items-start">
-								<!--begin::User-->
-								<div class="d-flex align-items-center mb-2">
-									<!--begin::Avatar-->
-									<div class="symbol symbol-35px symbol-circle">
-										<img alt="Pic" src="{{asset('assetz/media/avatars/300-25.jpg')}}" />
-									</div>
-									<!--end::Avatar-->
-									<!--begin::Details-->
-									<div class="ms-3">
-										<a href="#" class="fs-5 fw-bold text-gray-900 text-hover-primary me-1">Brian Cox</a>
-										<span class="text-muted fs-7 mb-1">1 Hour</span>
-									</div>
-									<!--end::Details-->
-								</div>
-								<!--end::User-->
-								<!--begin::Text-->
-								<div class="p-5 rounded bg-light-info text-dark fw-semibold mw-lg-400px text-start" data-kt-element="message-text">Ok, Understood!</div>
-								<!--end::Text-->
-							</div>
-							<!--end::Wrapper-->
-						</div>
-						<!--end::Message(in)-->
-						<!--begin::Message(out)-->
-						<div class="d-flex justify-content-end mb-10">
-							<!--begin::Wrapper-->
-							<div class="d-flex flex-column align-items-end">
-								<!--begin::User-->
-								<div class="d-flex align-items-center mb-2">
-									<!--begin::Details-->
-									<div class="me-3">
-										<span class="text-muted fs-7 mb-1">2 Hours</span>
-										<a href="#" class="fs-5 fw-bold text-gray-900 text-hover-primary ms-1">You</a>
-									</div>
-									<!--end::Details-->
-									<!--begin::Avatar-->
-									<div class="symbol symbol-35px symbol-circle">
-										<img alt="Pic" src="{{asset('assetz/media/avatars/300-1.jpg')}}" />
-									</div>
-									<!--end::Avatar-->
-								</div>
-								<!--end::User-->
-								<!--begin::Text-->
-								<div class="p-5 rounded bg-light-primary text-dark fw-semibold mw-lg-400px text-end" data-kt-element="message-text">You’ll receive notifications for all issues, pull requests!</div>
-								<!--end::Text-->
-							</div>
-							<!--end::Wrapper-->
-						</div>
-						<!--end::Message(out)-->
-						<!--begin::Message(in)-->
-						<div class="d-flex justify-content-start mb-10">
-							<!--begin::Wrapper-->
-							<div class="d-flex flex-column align-items-start">
-								<!--begin::User-->
-								<div class="d-flex align-items-center mb-2">
-									<!--begin::Avatar-->
-									<div class="symbol symbol-35px symbol-circle">
-										<img alt="Pic" src="{{asset('assetz/media/avatars/300-25.jpg')}}" />
-									</div>
-									<!--end::Avatar-->
-									<!--begin::Details-->
-									<div class="ms-3">
-										<a href="#" class="fs-5 fw-bold text-gray-900 text-hover-primary me-1">Brian Cox</a>
-										<span class="text-muted fs-7 mb-1">3 Hours</span>
-									</div>
-									<!--end::Details-->
-								</div>
-								<!--end::User-->
-								<!--begin::Text-->
-								<div class="p-5 rounded bg-light-info text-dark fw-semibold mw-lg-400px text-start" data-kt-element="message-text">You can unwatch this repository immediately by clicking here: 
-								<a href="https://keenthemes.com/">Keenthemes.com</a></div>
-								<!--end::Text-->
-							</div>
-							<!--end::Wrapper-->
-						</div>
-						<!--end::Message(in)-->
-						<!--begin::Message(out)-->
-						<div class="d-flex justify-content-end mb-10">
-							<!--begin::Wrapper-->
-							<div class="d-flex flex-column align-items-end">
-								<!--begin::User-->
-								<div class="d-flex align-items-center mb-2">
-									<!--begin::Details-->
-									<div class="me-3">
-										<span class="text-muted fs-7 mb-1">4 Hours</span>
-										<a href="#" class="fs-5 fw-bold text-gray-900 text-hover-primary ms-1">You</a>
-									</div>
-									<!--end::Details-->
-									<!--begin::Avatar-->
-									<div class="symbol symbol-35px symbol-circle">
-										<img alt="Pic" src="{{asset('assetz/media/avatars/300-1.jpg')}}" />
-									</div>
-									<!--end::Avatar-->
-								</div>
-								<!--end::User-->
-								<!--begin::Text-->
-								<div class="p-5 rounded bg-light-primary text-dark fw-semibold mw-lg-400px text-end" data-kt-element="message-text">Most purchased Business courses during this sale!</div>
-								<!--end::Text-->
-							</div>
-							<!--end::Wrapper-->
-						</div>
-						<!--end::Message(out)-->
-						<!--begin::Message(in)-->
-						<div class="d-flex justify-content-start mb-10">
-							<!--begin::Wrapper-->
-							<div class="d-flex flex-column align-items-start">
-								<!--begin::User-->
-								<div class="d-flex align-items-center mb-2">
-									<!--begin::Avatar-->
-									<div class="symbol symbol-35px symbol-circle">
-										<img alt="Pic" src="{{asset('assetz/media/avatars/300-25.jpg')}}" />
-									</div>
-									<!--end::Avatar-->
-									<!--begin::Details-->
-									<div class="ms-3">
-										<a href="#" class="fs-5 fw-bold text-gray-900 text-hover-primary me-1">Brian Cox</a>
-										<span class="text-muted fs-7 mb-1">5 Hours</span>
-									</div>
-									<!--end::Details-->
-								</div>
-								<!--end::User-->
-								<!--begin::Text-->
-								<div class="p-5 rounded bg-light-info text-dark fw-semibold mw-lg-400px text-start" data-kt-element="message-text">Company BBQ to celebrate the last quater achievements and goals. Food and drinks provided</div>
-								<!--end::Text-->
-							</div>
-							<!--end::Wrapper-->
-						</div>
-						<!--end::Message(in)-->
-						<!--begin::Message(template for out)-->
-						<div class="d-flex justify-content-end mb-10 d-none" data-kt-element="template-out">
-							<!--begin::Wrapper-->
-							<div class="d-flex flex-column align-items-end">
-								<!--begin::User-->
-								<div class="d-flex align-items-center mb-2">
-									<!--begin::Details-->
-									<div class="me-3">
-										<span class="text-muted fs-7 mb-1">Just now</span>
-										<a href="#" class="fs-5 fw-bold text-gray-900 text-hover-primary ms-1">You</a>
-									</div>
-									<!--end::Details-->
-									<!--begin::Avatar-->
-									<div class="symbol symbol-35px symbol-circle">
-										<img alt="Pic" src="{{asset('assetz/media/avatars/300-1.jpg')}}" />
-									</div>
-									<!--end::Avatar-->
-								</div>
-								<!--end::User-->
-								<!--begin::Text-->
-								<div class="p-5 rounded bg-light-primary text-dark fw-semibold mw-lg-400px text-end" data-kt-element="message-text"></div>
-								<!--end::Text-->
-							</div>
-							<!--end::Wrapper-->
-						</div>
-						<!--end::Message(template for out)-->
-						<!--begin::Message(template for in)-->
-						<div class="d-flex justify-content-start mb-10 d-none" data-kt-element="template-in">
-							<!--begin::Wrapper-->
-							<div class="d-flex flex-column align-items-start">
-								<!--begin::User-->
-								<div class="d-flex align-items-center mb-2">
-									<!--begin::Avatar-->
-									<div class="symbol symbol-35px symbol-circle">
-										<img alt="Pic" src="{{asset('assetz/media/avatars/300-25.jpg')}}" />
-									</div>
-									<!--end::Avatar-->
-									<!--begin::Details-->
-									<div class="ms-3">
-										<a href="#" class="fs-5 fw-bold text-gray-900 text-hover-primary me-1">Brian Cox</a>
-										<span class="text-muted fs-7 mb-1">Just now</span>
-									</div>
-									<!--end::Details-->
-								</div>
-								<!--end::User-->
-								<!--begin::Text-->
-								<div class="p-5 rounded bg-light-info text-dark fw-semibold mw-lg-400px text-start" data-kt-element="message-text">Right before vacation season we have the next Big Deal for you.</div>
-								<!--end::Text-->
-							</div>
-							<!--end::Wrapper-->
-						</div>
-						<!--end::Message(template for in)-->
-					</div>
-					<!--end::Messages-->
-				</div>
-				<!--end::Card body-->
-				<!--begin::Card footer-->
-				
-				<!--end::Card footer-->
-			</div>
-			<!--end::Messenger-->
-		</div>
+
 		<!--end::Chat drawer-->
 		<!--end::Drawers-->
 		<!--begin::Engage drawers-->
@@ -4206,6 +3579,29 @@ License: For each use you must have a valid license purchased only from above li
 		</div>
 		<!--end::Modal - Invite Friend-->
 		<!--end::Modals-->
+
+
+		<script src="{{asset('assetb/vendor/libs/jquery/jquery.js')}}"></script>
+    <script src="{{asset('assetb/vendor/libs/popper/popper.js')}}"></script>
+    <script src="{{asset('assetb/vendor/js/bootstrap.js')}}"></script>
+    <script src="{{asset('assetb/vendor/libs/perfect-scrollbar/perfect-scrollbar.js')}}"></script>
+
+    <script src="{{asset('assetb/vendor/js/menu.js')}}"></script>
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+    <script src="{{asset('assetb/vendor/libs/apex-charts/apexcharts.js')}}"></script>
+
+    <!-- Main JS -->
+    <script src="{{asset('assetb/js/main.js')}}"></script>
+
+    <!-- Page JS -->
+    <script src="{{asset('assetb/js/dashboards-analytics.js')}}"></script>
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js')}}"></script>
+
+
 		<!--begin::Javascript-->
 		<script>var hostUrl = "{{asset('assetz/index.html')}}";</script>
 		<!--begin::Global Javascript Bundle(used by all pages)-->

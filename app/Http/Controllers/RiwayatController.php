@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\pemesanan;
-use App\Models\transaksi;
+use App\Models\villa;
 use App\Models\riwayat;
 use Illuminate\Http\Request;
 
@@ -18,6 +18,7 @@ class RiwayatController extends Controller
     {
         $this->middleware('auth');
     }
+    
     /**
      * Display a listing of the resource.
      *
@@ -39,8 +40,8 @@ class RiwayatController extends Controller
     {
         //
         $pemesanan = pemesanan::all();
-        $transaksi = transaksi::all();
-        return view('riwayat.create', compact('pemesanan','transaksi'));
+        $villa = villa::all();
+        return view('riwayat.create', compact('pemesanan','villa'));
     }
 
     /**
@@ -53,31 +54,21 @@ class RiwayatController extends Controller
     {
         //validasi
         $validated = $request->validate([
-            'id_pemesanans' => 'required',
-            'nama_villa' => 'required',            
-            'jenis_villa' => 'required',
-            'lama' => 'required',
-            'jpesan' => 'required',
+            'id_villas' => 'required',
+            'id_pemesanans' => 'required',            
             'tgl_masuk' => 'required',
             'tgl_keluar' => 'required',
             'harga' => 'required',
-            'id_transaksi' => 'required',
-            'bayar' => 'required',
-            'sisa' => 'required',
+            'total' => 'required',
         ]);
 
         $riwayat = new riwayat();
+        $riwayat->id_villas = $request->id_villas;
         $riwayat->id_pemesanans = $request->id_pemesanans;
-        $riwayat->nama_villa =$request->nama_villa;
-        $riwayat->jenis_villa = $request->jenis_villa;
-        $riwayat->lama = $request->lama;
-        $riwayat->jpesan = $request->jpesan;
         $riwayat->tgl_masuk = $request->tgl_masuk;
         $riwayat->tgl_keluar = $request->tgl_keluar;
-        $riwayat->harga = $request->harga;
-        $riwayat->id_transaksi = $request->id_transaksi;
-        $riwayat->bayar = $request->bayar;
-        $riwayat->sisa = $request->sisa;
+        $riwayat->harga =$request->harga;
+        $riwayat->total = $request->total;
         $riwayat->save();
         return redirect()->route('riwayat.index')
             ->with('success', 'Data berhasil dibuat!');
@@ -105,9 +96,9 @@ class RiwayatController extends Controller
     {
         $riwayat = riwayat::findOrFail($id);
         $pemesanan = pemesanan::all();
-        $transaksi = transaksi::all();
+        $villa = villa::all();
 
-        return view('riwayat.edit', compact('riwayat', 'pemesanan', 'transaksi'));
+        return view('riwayat.edit', compact('riwayat', 'pemesanan', 'villa'));
 
     }
 
@@ -122,31 +113,21 @@ class RiwayatController extends Controller
     {
         // Validasi
         $validated = $request->validate([
+            'id_villas' => 'required',
+            'harga' => 'required',            
             'id_pemesanans' => 'required',
-            'nama_villa' => 'required',            
-            'jenis_villa' => 'required',
-            'lama' => 'required',
-            'jpesan' => 'required',
             'tgl_masuk' => 'required',
             'tgl_keluar' => 'required',
-            'harga' => 'required',
-            'id_transaksi' => 'required',
-            'bayar' => 'required',
-            'sisa' => 'required',
+            'total' => 'required',
         ]);
 
         $riwayat = riwayat::findOrFail($id);
+        $riwayat->id_villas = $request->id_villas;
+        $riwayat->harga = $request->harga;
         $riwayat->id_pemesanans = $request->id_pemesanans;
-        $riwayat->nama_villa = $request->nama_villa;
-        $riwayat->jenis_villa = $request->jenis_villa;
-        $riwayat->lama = $request->lama;
-        $riwayat->jpesan = $request->jpesan;
         $riwayat->tgl_masuk = $request->tgl_masuk;
         $riwayat->tgl_keluar = $request->tgl_keluar;
-        $riwayat->harga = $request->harga;
-        $riwayat->id_transaksi = $request->id_transaksi;
-        $riwayat->bayar = $request->bayar;
-        $riwayat->sisa = $request->sisa;
+        $riwayat->total = $request->total;
         $riwayat->save();
 
         return redirect()->route('riwayat.index')

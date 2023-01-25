@@ -21,7 +21,12 @@ class identitas extends Model
         // dari model 'pemesanan' melalui id_siswa
         return $this->hasOne(Pemesanan::class, 'id_identitas');
     }
-
+    public function riview()
+    {
+        // data dari model 'Siswa' bisa memiliki 1 data
+        // dari model 'pemesanan' melalui id_siswa
+        return $this->hasOne(Review::class, 'id_identitas');
+    }
     public function riwayats()
     {
         // data dari model 'Siswa' bisa memiliki 1 data

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Laratrust;
 
 class HomeController extends Controller
 {
@@ -16,13 +16,26 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
+        if (Laratrust::hasRole('administrator')) {
+            return $this->adminDashboard();
+        }
+
+        if (Laratrust::hasRole('user')) {
+            return $this->memberDashboard();
+        }
+
         return view('home');
+    }
+
+    protected function adminDashboard()
+    {
+        return view('admin.index');
+    }
+
+    protected function memberDashboard()
+    {
+        return view('user.user');
     }
 }

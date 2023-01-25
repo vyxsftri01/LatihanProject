@@ -37,4 +37,27 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-}
+    // public function login(Request $request)
+    // {
+    //     $input = $request->all();
+
+    //     $this->validate($request, [
+    //         'email' => 'requiredemail',
+    //         'password' => 'required',
+    //     ]);
+
+    //     if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password']))){
+    //             if(auth()->user()->level == "admin") {
+    //                 return redirect('admin/
+    //                 dashboard');
+    //             }elseif (auth()->user()->level== "member") {
+    //                 return redirect() -> route('hireath'); } else {
+    //                     return redirect() -> route('index');
+    //                 }
+    //             }else {
+    //                 return redirect('login-user')
+    //                 ->with('error', 'Email-Adsress And Password Are Wrong.');
+    //             }
+    //     }
+    }
+
